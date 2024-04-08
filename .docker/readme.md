@@ -19,16 +19,16 @@ Follow these steps to setup a local WordCamp.org environment using [Docker](http
           ```
 
 1. Generate and trust the SSL certificates, so you get a green bar and can adequately test service workers.
-	```bash
+   	
+    _Using zsh? You may see `zsh: no matches found: *.wordcamp.test` running the final cert command below. Try prefixing the final command with `noglob`, i.e. `noglob mkcert -cert-file ...`_
+	
+    ```bash
 	cd .docker
 	brew install mkcert
 	brew install nss
 	mkcert -install
 	mkcert -cert-file wordcamp.test.pem -key-file wordcamp.test.key.pem wordcamp.test *.wordcamp.test events.wordpress.test
 	```
-
-	_Using zsh? You may see `zsh: no matches found: *.wordcamp.test` running the final cert command above. Try prefixing the final command with `noglob`, i.e. `noglob mkcert -cert-file ...`_
-
 1. Clone WordPress into the **public_html/mu** directory and check out the latest version's branch.
     ```bash
     cd ..
@@ -40,7 +40,7 @@ Follow these steps to setup a local WordCamp.org environment using [Docker](http
 
 1. Install 3rd-party PHP packages used on WordCamp.org. For this, you must have [Composer](https://getcomposer.org/doc/00-intro.md) installed. Once it is, change back to the root directory of the project where the main **composer.json** file is located. (Not the one in .docker/config.)
 	```bash
-	cd .. # to the directory above public_html/
+	cd ../../ # to the directory above public_html/
 	composer install
 	```
 
