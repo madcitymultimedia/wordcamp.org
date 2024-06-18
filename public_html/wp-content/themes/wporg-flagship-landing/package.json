@@ -6,7 +6,7 @@
 	"devDependencies": {
 		"@wordpress/scripts": "^26.18.0",
 		"cssnano": "^6.0.1",
-		"postcss": "^8.4.31",
+		"postcss": "^8.4.32",
 		"postcss-cli": "^10.1.0",
 		"postcss-custom-media": "^10.0.2",
 		"postcss-import": "^15.1.0",
